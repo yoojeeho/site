@@ -4,5 +4,19 @@ const getLanguage = () => navigator.userLanguage || (navigator.languages && navi
 const lang = getLanguage().toLowerCase();
 const isKo = true;//['ko', 'ko-kr', 'kr'].includes(lang);
 
-location.href = `https://yoojeeho.github.io/site/${isKo ? 'kor' : 'eng'}_ads.html`;
+const url = new URL(window.location.href);
+const version = url.searchParams.get("version");
+
+console.log("Requested version: " + version);
+
+switch(version) {
+	case '19': 
+	case 19:
+		location.href = "https://ugho.tistory.com";
+		break;
+	default:
+		location.href = `https://yoojeeho.github.io/site/${isKo ? 'kor' : 'eng'}_ads.html`;//May need to be "https://yoojeeho.github.io" in best case!
+		break;
+}
+
 </script>
