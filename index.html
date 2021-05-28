@@ -2,7 +2,7 @@
 <script>
 const getLanguage = () => navigator.userLanguage || (navigator.languages && navigator.languages.length && navigator.languages[0]) || navigator.language || navigator.browserLanguage || navigator.systemLanguage || 'en';
 const lang = getLanguage().toLowerCase();
-const isKo = false;//['ko', 'ko-kr', 'kr'].includes(lang);
+const isKo = true;//['ko', 'ko-kr', 'kr'].includes(lang);
 
 location.href = `https://yoojeeho.github.io/site/${isKo ? 'kor' : 'eng'}_ads.html`;
 </script>
