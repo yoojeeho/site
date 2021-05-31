@@ -14,8 +14,8 @@ switch(version) {
 	case undefined:
 		const getLanguage = () => navigator.userLanguage || (navigator.languages && navigator.languages.length && navigator.languages[0]) || navigator.language || navigator.browserLanguage || navigator.systemLanguage || 'en';
 		const lang = getLanguage().toLowerCase();
-		const isKo = true;//['ko', 'ko-kr', 'kr'].includes(lang);
-		const adsForLang = `https://yoojeeho.github.io/site/${isKo ? 'kor' : 'eng'}_ads.html`;
+		const isKo = ['ko', 'ko-kr', 'kr'].includes(lang);
+		const adsForLang = 'https://yoojeeho.github.io/site/ads.html';//`https://yoojeeho.github.io/site/${isKo ? 'kor' : 'eng'}_ads.html`;
 		
 		location.href = adsForLang;//May need to be "https://yoojeeho.github.io" in best case!
 		break;
