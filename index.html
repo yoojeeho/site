@@ -1,25 +1,26 @@
 <script>
-const getLanguage = () => navigator.userLanguage || (navigator.languages && navigator.languages.length && navigator.languages[0]) || navigator.language || navigator.browserLanguage || navigator.systemLanguage || 'en';
-const lang = getLanguage().toLowerCase();
-const isKo = true;//['ko', 'ko-kr', 'kr'].includes(lang);
-const adsForLang = `https://yoojeeho.github.io/site/${isKo ? 'kor' : 'eng'}_ads.html`;
-
 const url = new URL(window.location.href);
 const version = url.searchParams.get("version");
 
 console.log("Requested version: " + version);
 
 switch(version) {
-	case '19': 
-	case 19:
-		location.href = "https://ugho.tistory.com";
-		break;
 	case 'test':
 		const result = confirm('New update is waiting for you! Do you want to update the app?');
 		if (result) location.href = "ms-windows-store://pdp/?ProductId=9NSPTMMF3NCD";
 		break;
-	default:
+	case '':
+	case null:
+	case undefined:
+		const getLanguage = () => navigator.userLanguage || (navigator.languages && navigator.languages.length && navigator.languages[0]) || navigator.language || navigator.browserLanguage || navigator.systemLanguage || 'en';
+		const lang = getLanguage().toLowerCase();
+		const isKo = true;//['ko', 'ko-kr', 'kr'].includes(lang);
+		const adsForLang = `https://yoojeeho.github.io/site/${isKo ? 'kor' : 'eng'}_ads.html`;
+		
 		location.href = adsForLang;//May need to be "https://yoojeeho.github.io" in best case!
+		break;
+	default:
+		location.href = "https://ugho.tistory.com";
 		break;
 }
 
