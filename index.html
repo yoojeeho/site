@@ -8,8 +8,9 @@ function getRandomInt(min, max) {
   }
 
 function getBlogPost() {
-    const num = getRandomInt(34, 56);
-    const ret = `${BLOG}/${num}`;
+    const excluded = [47];
+    const num = getRandomInt(34, 56);    
+    const ret = excluded.includes(num) ? BLOG : `${BLOG}/${num}` ;
 
     return ret;
 }
