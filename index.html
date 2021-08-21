@@ -1,4 +1,13 @@
 <script>
+const BLOG = "https://ugho.tistory.com";
+	
+function getBlogPost() {
+    const num = getRandomInt(34, 56);
+    const ret = `${BLOG}/${num}`;
+
+    return ret;
+}
+	
 const url = new URL(window.location.href);
 const version = url.searchParams.get("version");
 
@@ -20,7 +29,7 @@ switch(version) {
 		location.href = adsForLang;//May need to be "https://yoojeeho.github.io" in best case!
 		break;
 	default:
-		location.href = "https://ugho.tistory.com";
+		location.href = getBlogPost();
 		break;
 }
 
