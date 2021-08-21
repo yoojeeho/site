@@ -1,6 +1,12 @@
 <script>
 const BLOG = "https://ugho.tistory.com";
-	
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
 function getBlogPost() {
     const num = getRandomInt(34, 56);
     const ret = `${BLOG}/${num}`;
