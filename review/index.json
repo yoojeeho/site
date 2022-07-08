@@ -4,5 +4,9 @@
         "TopTalker.exe": false,
         "YouTuBrowser.exe": true,
         "TaskerTasker.exe": true
+    },
+    "20220409": {
+        "SuperTaskerTasker.exe": false,
+        "TaskerTasker.exe": false
     }
 }
