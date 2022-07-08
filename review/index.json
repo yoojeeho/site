@@ -6,7 +6,7 @@
         "TaskerTasker.exe": true
     },
     "20220409": {
-        "SuperTaskerTasker.exe": false,
+        "SuperTaskerTasker.exe": true,
         "TaskerTasker.exe": false
     }
 }
